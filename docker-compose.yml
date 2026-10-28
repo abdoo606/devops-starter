@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    command: ["python", "-m", "devops.healthcheck", "--disk", "/", "--json"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      test: ["CMD", "python", "-m", "devops.healthcheck", "--disk", "/", "--min-free-mb", "50"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
