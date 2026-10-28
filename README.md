@@ -20,3 +20,7 @@ pytest projects/30-devops-starter -q
 - TCP, disk and memory checks with timings and machine-readable JSON
 - Correct exit codes: 0 healthy, 1 unhealthy
 - Multi-stage Dockerfile and a compose file with a real healthcheck
+
+## Repository
+- GitHub: https://github.com/{owner}/devops-starter
+- Python 3.11+ · tests: `pytest` · runtime dependencies: none (standard library only)
